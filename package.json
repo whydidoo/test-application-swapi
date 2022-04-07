@@ -2,7 +2,7 @@
   "name": "test-application",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://whydidoo.github.io",
+  "homepage": "https://whydidoo.github.io/test-application-swapi/",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@styled-system/css": "^5.1.5",

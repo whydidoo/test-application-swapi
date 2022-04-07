@@ -26,7 +26,7 @@ export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <Theme>
-        <Router>
+        <Router basename={`/${process.env.PUBLIC_URL}`}>
           <Header />
 
           <Routes>
