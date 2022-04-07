@@ -1,4 +1,4 @@
-import { Descriptions } from 'antd';
+import { Descriptions, Spin } from 'antd';
 
 import { useGetPlanet } from './hooks';
 
@@ -7,7 +7,7 @@ interface IHomeworldProps {
 }
 
 export const Homeworld: React.FC<IHomeworldProps> = ({ homeworld }) => {
-  const { data } = useGetPlanet(homeworld);
+  const { data, isLoading } = useGetPlanet(homeworld);
 
   if (!data) {
     return null;
@@ -24,15 +24,17 @@ export const Homeworld: React.FC<IHomeworldProps> = ({ homeworld }) => {
   } = data;
 
   return (
-    <Descriptions title={name} column={2}>
-      <Descriptions.Item label="Diameter">{diameter}</Descriptions.Item>
-      <Descriptions.Item label="Climate">{climate}</Descriptions.Item>
-      <Descriptions.Item label="Rotation period">
-        {rotation_period}
-      </Descriptions.Item>
-      <Descriptions.Item label="Gravity">{gravity}</Descriptions.Item>
-      <Descriptions.Item label="Terrain">{terrain}</Descriptions.Item>
-      <Descriptions.Item label="Population">{population}</Descriptions.Item>
-    </Descriptions>
+    <Spin spinning={isLoading}>
+      <Descriptions title={name} column={2}>
+        <Descriptions.Item label="Diameter">{diameter}</Descriptions.Item>
+        <Descriptions.Item label="Climate">{climate}</Descriptions.Item>
+        <Descriptions.Item label="Rotation period">
+          {rotation_period}
+        </Descriptions.Item>
+        <Descriptions.Item label="Gravity">{gravity}</Descriptions.Item>
+        <Descriptions.Item label="Terrain">{terrain}</Descriptions.Item>
+        <Descriptions.Item label="Population">{population}</Descriptions.Item>
+      </Descriptions>
+    </Spin>
   );
 };

@@ -1,4 +1,4 @@
-import { Descriptions, Typography } from 'antd';
+import { Descriptions, Spin, Typography } from 'antd';
 import Paragraph from 'antd/lib/typography/Paragraph';
 import { format } from 'date-fns';
 
@@ -15,13 +15,14 @@ interface IFilmsProps {
 }
 
 export const Films: React.FC<IFilmsProps> = ({ films }) => {
-  const { data } = useGetFilms(films);
+  const { data, isLoading } = useGetFilms(films);
 
   return (
-    <>
+    <Spin spinning={isLoading}>
       {data.map((film) => {
         const { url, title, opening_crawl, release_date, director, producer } =
           film;
+
         return (
           <View key={url}>
             <View>
@@ -42,6 +43,6 @@ export const Films: React.FC<IFilmsProps> = ({ films }) => {
           </View>
         );
       })}
-    </>
+    </Spin>
   );
 };
