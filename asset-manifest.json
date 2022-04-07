@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/test-application-swapi/static/css/main.e10fddce.css",
-    "main.js": "/test-application-swapi/static/js/main.8dec549f.js",
+    "main.js": "/test-application-swapi/static/js/main.ae0e216a.js",
     "static/js/787.7095dfdc.chunk.js": "/test-application-swapi/static/js/787.7095dfdc.chunk.js",
     "static/media/Logo.svg": "/test-application-swapi/static/media/Logo.099697389bc4ef14bbe12d78af89307d.svg",
     "index.html": "/test-application-swapi/index.html",
     "main.e10fddce.css.map": "/test-application-swapi/static/css/main.e10fddce.css.map",
-    "main.8dec549f.js.map": "/test-application-swapi/static/js/main.8dec549f.js.map",
+    "main.ae0e216a.js.map": "/test-application-swapi/static/js/main.ae0e216a.js.map",
     "787.7095dfdc.chunk.js.map": "/test-application-swapi/static/js/787.7095dfdc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e10fddce.css",
-    "static/js/main.8dec549f.js"
+    "static/js/main.ae0e216a.js"
   ]
 }
