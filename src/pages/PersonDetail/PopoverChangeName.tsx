@@ -44,7 +44,7 @@ export const PopoverChangeName: React.FC<IPopoverChangeName> = ({ name }) => {
       }
       title="Change character's name"
       trigger="click"
-      visible={true}
+      visible={visible}
       onVisibleChange={setVisible}
       destroyTooltipOnHide
     >
