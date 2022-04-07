@@ -1,0 +1,12 @@
+{
+  "BrandColor": "#EF3333",
+  "TextColorMain": "#1D1D1D",
+  "TextColorSecondary": "#6C6F71",
+  "BGGeneral1": "#FFFFFF",
+  "BGGeneral2": "#F6F6F6",
+  "BGSecondary1": "#B5B8BA",
+  "BGSecondary2": "#ECECEC",
+  "Positive": "#34C759",
+  "Warning": "#FF8717",
+  "Link": "#4F3CC9"
+}
