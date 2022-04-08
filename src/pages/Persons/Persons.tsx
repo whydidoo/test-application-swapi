@@ -76,6 +76,7 @@ export const Persons: React.FC = () => {
           showSizeChanger={false}
           current={page}
           onChange={onChangePage}
+          size="small"
         />
       </View>
       <Outlet />

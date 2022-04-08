@@ -13,7 +13,7 @@ export const PersonDetail: React.FC = () => {
   const onClose = () => navigate('..');
 
   return (
-    <Drawer visible={true} onClose={onClose} width="500px">
+    <Drawer visible={true} onClose={onClose}>
       <PersonContainer
         person={person}
         isError={isError}

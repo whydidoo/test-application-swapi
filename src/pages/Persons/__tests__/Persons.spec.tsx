@@ -5,40 +5,37 @@ import { MockProvidersWrapper } from 'components';
 
 import { Persons } from '../Persons';
 
-const setup = async () =>
+const setup = async () => {
   render(<Persons />, { wrapper: MockProvidersWrapper });
+
+  await waitFor(() => {
+    expect(screen.getByText('Movie characters')).toBeInTheDocument();
+  });
+};
 
 describe('Тестирование компонента Persons', () => {
   it('отображение списка персонажей', async () => {
-    setup();
+    await setup();
 
     await waitFor(() => {
-      expect(screen.getByText('Movie characters')).toBeInTheDocument();
+      expect(screen.getAllByTestId('person-item').length).toBe(10);
     });
-
-    expect(screen.getAllByTestId('person-item').length).toBe(10);
   });
 
   it('изменение пагинации', async () => {
-    setup();
+    await setup();
 
-    await waitFor(() => {
-      expect(screen.getByText('Movie characters')).toBeInTheDocument();
-    });
-
-    let buttonPagination = screen.getByTitle('2');
+    let buttonPagination = await screen.findByText('2');
 
     userEvent.click(buttonPagination);
 
-    expect(window.location.href.includes('page=2')).toBeTruthy();
+    await waitFor(() => {
+      expect(window.location.href.includes('page=2')).toBeTruthy();
+    });
   });
 
   it('отправка запроса с search полем', async () => {
-    setup();
-
-    await waitFor(() => {
-      expect(screen.getByText('Movie characters')).toBeInTheDocument();
-    });
+    await setup();
 
     const inputSearch = screen.getByPlaceholderText('Search');
     userEvent.type(inputSearch, 'lu');
