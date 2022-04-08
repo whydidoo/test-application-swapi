@@ -48,6 +48,7 @@ export const Person: React.FC<IPersonProps> = ({ person }) => {
             Copy url
           </Button>
         }
+        column={2}
       >
         <Descriptions.Item label="Gender">{gender}</Descriptions.Item>
         <Descriptions.Item label="Height">{height}</Descriptions.Item>
